@@ -7,7 +7,6 @@ const CounterStyle = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
   .counter {
     &__counter {
       margin: 10px;

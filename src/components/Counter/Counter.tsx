@@ -1,6 +1,8 @@
+import CounterStyle from "./CounterStyle";
+
 const Counter = () => {
   return (
-    <section className="counter">
+    <CounterStyle className="counter">
       <div className="counter__container">
         <div className="counter__counter">02</div>
         <span className="counter__text">days</span>
@@ -17,7 +19,7 @@ const Counter = () => {
         <div className="counter__counter">09</div>
         <span className="counter__text">seconds</span>
       </div>
-    </section>
+    </CounterStyle>
   );
 };
 

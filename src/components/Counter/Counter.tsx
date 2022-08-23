@@ -1,5 +1,6 @@
 import targetDate from "../../data/targetDate";
-import useCountdown from "../../store/hooks";
+import useCountdown from "../../hooks/useCountdown";
+
 import CounterStyle from "./CounterStyle";
 
 const Counter = () => {

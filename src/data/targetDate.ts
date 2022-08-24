@@ -1,3 +1,3 @@
-const targetDate = new Date("2022, 12, 24");
+const targetDate = new Date("2022, 08, 24");
 
 export default targetDate;

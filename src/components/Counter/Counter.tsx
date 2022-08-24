@@ -6,7 +6,7 @@ import CounterStyle from "./CounterStyle";
 const Counter = () => {
   const [days, hours, minutes, seconds, countDown] = useCountdown(targetDate);
 
-  if (countDown >= 0) {
+  if (countDown > 0) {
     return (
       <CounterStyle className="counter">
         <div className="counter__container">

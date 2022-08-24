@@ -12,8 +12,10 @@ const useCountdown = (targetDate: Date) => {
       setCountDown(countDownDate - new Date().getTime());
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, [countDownDate]);
+    if (countDown <= 0) {
+      clearInterval(interval);
+    }
+  }, [countDownDate, countDown]);
 
   return getReturnValues(countDown);
 };
@@ -26,7 +28,7 @@ const getReturnValues = (countDown: number) => {
   const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
 
-  return [days, hours, minutes, seconds];
+  return [days, hours, minutes, seconds, countDown];
 };
 
 export default useCountdown;

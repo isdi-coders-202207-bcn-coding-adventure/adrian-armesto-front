@@ -6,29 +6,31 @@ import CounterStyle from "./CounterStyle";
 const Counter = () => {
   const [days, hours, minutes, seconds, countDown] = useCountdown(targetDate);
 
-  if (countDown >= 0) {
-    return (
-      <CounterStyle className="counter">
-        <div className="counter__container">
-          <div className="counter__counter">{days}</div>
-          <span className="counter__text">days</span>
-        </div>
-        <div className="counter__container">
-          <div className="counter__counter">{hours}</div>
-          <span className="counter__text">hours</span>
-        </div>
-        <div className="counter__container">
-          <div className="counter__counter">{minutes}</div>
-          <span className="counter__text">minutes</span>
-        </div>
-        <div className="counter__container">
-          <div className="counter__counter">{seconds}</div>
-          <span className="counter__text">seconds</span>
-        </div>
-      </CounterStyle>
-    );
-  }
-  return <></>;
+  return (
+    <>
+      {countDown > 0 && (
+        <CounterStyle className="counter">
+          <div className="counter__container">
+            <div className="counter__counter">{days}</div>
+            <span className="counter__text">days</span>
+          </div>
+          <div className="counter__container">
+            <div className="counter__counter">{hours}</div>
+            <span className="counter__text">hours</span>
+          </div>
+          <div className="counter__container">
+            <div className="counter__counter">{minutes}</div>
+            <span className="counter__text">minutes</span>
+          </div>
+          <div className="counter__container">
+            <div className="counter__counter">{seconds}</div>
+            <span className="counter__text">seconds</span>
+          </div>
+        </CounterStyle>
+      )}
+      {countDown <= 0 && <></>}
+    </>
+  );
 };
 
 export default Counter;
